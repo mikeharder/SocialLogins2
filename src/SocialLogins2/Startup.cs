@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using SocialLogins2.Data;
 using SocialLogins2.Models;
 using SocialLogins2.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace SocialLogins2
 {
@@ -52,7 +53,10 @@ namespace SocialLogins2
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            services.AddMvc();
+            services.AddMvc(options =>
+            {
+                options.Filters.Add(new RequireHttpsAttribute());
+            });
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
