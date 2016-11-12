@@ -2,7 +2,7 @@
   "userSecretsId": "aspnet-SocialLogins2-6445dde1-bc6f-47ba-b671-21ebdfacd60e",
 
   "dependencies": {
-    "Microsoft.ApplicationInsights.AspNetCore": "1.0.0",
+    "Microsoft.ApplicationInsights.AspNetCore": "1.0.2",
     "Microsoft.AspNetCore.Authentication.Cookies": "1.1.0",
     "Microsoft.AspNetCore.Diagnostics": "1.1.0",
     "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "1.1.0",
@@ -48,7 +48,7 @@
   },
 
   "tools": {
-    "BundlerMinifier.Core": "2.0.238",
+    "BundlerMinifier.Core": "2.2.301",
     "Microsoft.AspNetCore.Razor.Tools": "1.1.0-preview4-final",
     "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.1.0-preview4-final",
     "Microsoft.EntityFrameworkCore.Tools": "1.1.0-preview4-final",
