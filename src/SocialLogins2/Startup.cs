@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,7 +9,6 @@ using Microsoft.Extensions.Logging;
 using SocialLogins2.Data;
 using SocialLogins2.Models;
 using SocialLogins2.Services;
-using Microsoft.AspNetCore.Mvc;
 
 namespace SocialLogins2
 {
@@ -93,6 +89,13 @@ namespace SocialLogins2
             {
                 AppId = Configuration["Authentication:Facebook:AppId"],
                 AppSecret = Configuration["Authentication:Facebook:AppSecret"]
+            });
+
+            app.UseOpenIdConnectAuthentication(new OpenIdConnectOptions()
+            {
+                ClientId = Configuration["Authentication:OpenIdConnect:ClientId"],
+                ClientSecret = Configuration["Authentication:OpenIdConnect:ClientSecret"],
+                Authority = Configuration["Authentication:OpenIdConnect:Authority"]
             });
 
             app.UseMvc(routes =>
