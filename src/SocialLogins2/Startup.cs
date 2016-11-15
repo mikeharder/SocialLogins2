@@ -43,7 +43,7 @@ namespace SocialLogins2
             services.AddApplicationInsightsTelemetry(Configuration);
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseInMemoryDatabase());
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
